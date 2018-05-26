@@ -1,26 +1,26 @@
 "use strict";
 
-const User = use('App/Models/User')
+const User = use("App/Models/User");
 
 class UserController {
-
   async login({ request, auth }) {
-  	const { email, password } = request.all();
-  	const token = auth.attempt(email, password);
-  	return token;
+    const { email, password } = request.all();
+    const token = auth.attempt(email, password);
+    return token;
   }
 
   async register({ request }) {
     const { email, password } = request.all();
-    const user = await User.create({
-    	email,
-    	password,
-    	username: email
+    /* const user = */ await User.create({
+      email,
+      password,
+      username: email
     });
     // console.log(email + " " + password);
-    return {
+    /* return {
       user
-    };
+    };*/
+    return this.login(...arguments);
   }
 }
 

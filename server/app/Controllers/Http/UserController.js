@@ -8,8 +8,8 @@ class UserController {
   	const { email, password } = request.all();
   	const token = auth.attempt(email, password);
   	return token;
-
   }
+
   async register({ request }) {
     const { email, password } = request.all();
     const user = await User.create({

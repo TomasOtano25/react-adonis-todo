@@ -9,7 +9,7 @@ class TaskSchema extends Schema {
       table
         .integer("project_id")
         .unsigned()
-        .reference("id")
+        .references("id")
         .inTable("projects");
       table.string("description", 510);
       table.timestamps();

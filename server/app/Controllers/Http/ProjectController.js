@@ -8,7 +8,7 @@ class ProjectController {
     const user = await auth.getUser();
     //console.log(user.username);
     //return user;
-    return user.projects().fetch();
+    return await user.projects().fetch();
   }
 
   async create({ auth, request }) {

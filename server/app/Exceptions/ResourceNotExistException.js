@@ -1,12 +1,16 @@
-'use strict'
+"use strict";
 
-const { LogicalException } = require('@adonisjs/generic-exceptions')
+const { LogicalException } = require("@adonisjs/generic-exceptions");
 
 class ResourceNotExistException extends LogicalException {
   /**
    * Handle this exception by itself
    */
-  // handle () {}
+  handle(error, { response }) {
+    return response.status(404).json({
+      error: "this resource did not exist"
+    });
+  }
 }
 
-module.exports = ResourceNotExistException
+module.exports = ResourceNotExistException;

@@ -37,6 +37,9 @@ class ProjectController {
     const { id } = params;
     const project = await Project.find(id);
     AuthorizationServices.verifyPermission(project, user);
+    project.merge(request.only("title"));
+    await project.save();
+    return project;
   }
 }
 

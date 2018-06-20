@@ -17,6 +17,7 @@ export default class RoundedButton extends Component {
       <TouchableHighlight
         style={[styles.wrapper, { backgroundColor }]}
         onPress={handleOnPress}
+        activeOpacity={1}
       >
         <View style={styles.buttonTextWrapper}>
           {icon}

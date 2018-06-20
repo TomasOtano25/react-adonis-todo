@@ -17,7 +17,7 @@ import TextButton from "../components/buttons/TextButton";
 
 const colorPrimary = colors.primary;
 
-export default class App extends React.Component {
+export default class LoggedOut extends React.Component {
   onFacebookPress() {
     Alert.alert("Facebook button pressed");
   }

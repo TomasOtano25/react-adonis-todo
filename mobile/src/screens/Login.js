@@ -11,6 +11,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 
 import colors from "../styles/colors";
 
+import InputField from "../components/inputs/InputField";
+
 export default class Login extends React.Component {
   render() {
     return (
@@ -18,6 +20,8 @@ export default class Login extends React.Component {
         <View style={styles.scrollViewWrapper}>
           <ScrollView style={styles.scrollView}>
             <Text style={styles.loginHeader}>Log In</Text>
+            <InputField labelText="Email" />
+            <InputField labelText="Password" />
           </ScrollView>
         </View>
       </KeyboardAvoidingView>
